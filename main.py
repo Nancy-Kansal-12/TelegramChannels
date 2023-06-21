@@ -78,12 +78,6 @@ def get_csv_file(filename) :
     all_channels = get_channels_list()
     all_channels.sort(key = sort_by_participants, reverse = True)
     
-    y = [i[2] for i in all_channels]
-    plt.plot(y)
-    plt.show()
-    
-    
-    
     df = pd.DataFrame(all_channels, columns = ['Name', 'Link', 'Participants'])
     df.to_csv(filename + ".csv", index = False)
 
